@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { View, Text, TouchableOpacity, Dimensions, Image } from 'react-native';
-//import { closeButton } from 'assets/images';
+import { closeButton } from '../../assets/images';
 
 const screenHeight = Dimensions.get('window').height;
 const screenWidth = Dimensions.get('window').width;
@@ -10,32 +10,35 @@ const screenPixelWeight = 375;
 class InterestScreen extends Component {
     render() {
         const { 
-            outerContainer, titleText, buttonStyle, buttonTitleText, buttonDescriptionText
+            outerContainer, closeButtonStyle, titleText, buttonStyle, buttonTitleText, buttonDescriptionText
         } = styles;
 
         return (
-            <View style={outerContainer}>
+            <View style={{ flex: 1 }}>
                 <TouchableOpacity>
+                    <Image source={closeButton} style={closeButtonStyle} resizeMode='contain' />
                 </TouchableOpacity>
-                <Text style={titleText}>What's your interest?</Text>
-                <TouchableOpacity style={buttonStyle}>
-                    <Text style={buttonTitleText}>Track Consumption</Text>
-                    <Text style={buttonDescriptionText}>
-                        Lorem ipsum dolor sit amet, et lucilius scribentur per, cu qui error corpora detraxit. Ex quodsi ocurreret necessitatibus usu.
-                    </Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={buttonStyle}>
-                    <Text style={buttonTitleText}>Learn More</Text>
-                    <Text style={buttonDescriptionText}>
-                        Lorem ipsum dolor sit amet, et lucilius scribentur per, cu qui error corpora detraxit. Ex quodsi ocurreret necessitatibus usu.
-                    </Text>
-                </TouchableOpacity>
-                <TouchableOpacity style={buttonStyle}>
-                    <Text style={buttonTitleText}>Receive Recommendations</Text>
-                    <Text style={buttonDescriptionText}>
-                        Lorem ipsum dolor sit amet, et lucilius scribentur per, cu qui error corpora detraxit. Ex quodsi ocurreret necessitatibus usu.
-                    </Text>
-                </TouchableOpacity>
+                <View style={outerContainer}>
+                    <Text style={titleText}>{`What's your interest?`}</Text>
+                    <TouchableOpacity style={buttonStyle}>
+                        <Text style={buttonTitleText}>{`Track Consumption`}</Text>
+                        <Text style={buttonDescriptionText}>
+                            {`Lorem ipsum dolor sit amet, et lucilius scribentur per, cu qui error corpora detraxit. Ex quodsi ocurreret necessitatibus usu.`}
+                        </Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={buttonStyle}>
+                        <Text style={buttonTitleText}>{`Learn More`}</Text>
+                        <Text style={buttonDescriptionText}>
+                            {`Lorem ipsum dolor sit amet, et lucilius scribentur per, cu qui error corpora detraxit. Ex quodsi ocurreret necessitatibus usu.`}
+                        </Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={buttonStyle}>
+                        <Text style={buttonTitleText}>{`Receive Recommendations`}</Text>
+                        <Text style={buttonDescriptionText}>
+                            {`Lorem ipsum dolor sit amet, et lucilius scribentur per, cu qui error corpora detraxit. Ex quodsi ocurreret necessitatibus usu.`}
+                        </Text>
+                    </TouchableOpacity>
+                </View>
             </View>
         );
     }
@@ -46,8 +49,14 @@ const styles = {
         flex: 1,
         alignItems: 'center',
     },
+    closeButtonStyle: {
+        marginTop: screenHeight * (55 / screenPixelHeight),
+        height: screenHeight * (25 / screenPixelHeight),
+        width: screenWidth * (25 / screenPixelWeight),
+        marginLeft: screenWidth * (20 / screenPixelWeight),
+    },
     titleText: {
-        marginTop: screenHeight * (230 / screenPixelHeight),
+        marginTop: screenHeight * ((230 - 100) / screenPixelHeight),
         fontFamily: 'helvetica-neue-bold',
         fontSize: 30,
         marginBottom: screenHeight * (30 / screenPixelHeight),

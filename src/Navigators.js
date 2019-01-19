@@ -5,7 +5,9 @@ import {
 
 import {
     WelcomeScreen,
-    InterestScreen
+    InterestScreen,
+    ProfileScreen,
+    AddStrainScreen
 } from './screens';
 
 const RootStack = createStackNavigator(
@@ -21,10 +23,22 @@ const RootStack = createStackNavigator(
         navigationOptions: {
             header: null
         }
+    },
+    ProfileScreen: {
+        screen: ProfileScreen,
+        navigationOptions: {
+            header: null
+        }
+    },
+    AddStrainScreen: {
+        screen: AddStrainScreen,
+        navigationOptions: {
+            header: null
+        }
     }
   },
 {
-  initialRouteName: 'InterestScreen',
+  initialRouteName: 'AddStrainScreen',
 });
 
 const Main = createAppContainer(RootStack);
