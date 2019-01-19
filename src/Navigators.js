@@ -4,20 +4,27 @@ import {
 } from 'react-navigation';
 
 import {
-    ExampleScreen,
+    WelcomeScreen,
+    InterestScreen
 } from './screens';
 
 const RootStack = createStackNavigator(
   {
-    App: {
-      screen: ExampleScreen,
-      navigationOptions: {
+    WelcomeScreen: {
+        screen: WelcomeScreen,
+        navigationOptions: {
         header: null
-      }
+        }
     },
+    InterestScreen: {
+        screen: InterestScreen,
+        navigationOptions: {
+            header: null
+        }
+    }
   },
 {
-  initialRouteName: 'App',
+  initialRouteName: 'InterestScreen',
 });
 
 const Main = createAppContainer(RootStack);
