@@ -45,7 +45,7 @@ const RootStack = createStackNavigator(
     }
   },
 {
-  initialRouteName: 'AddStrainScreen',
+  initialRouteName: 'WelcomeScreen',
 });
 
 const Main = createAppContainer(RootStack);

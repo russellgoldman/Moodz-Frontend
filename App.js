@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, StatusBar } from 'react-native';
 import { AppLoading } from 'expo';
 import cacheAssetsAsync from './src/cacheAssetsAsync';
 
@@ -12,6 +12,7 @@ export default class App extends Component {
   
   componentWillMount() {
     this._loadAssetsAsync();
+    StatusBar.setBarStyle('light-content', true);
   }
 
   async _loadAssetsAsync() {
@@ -20,7 +21,8 @@ export default class App extends Component {
         images: [
           require('./assets/images/closeButton.png'),
           require('./assets/images/closeButtonWhite.png'),
-          require('./assets/images/takePicture.png')
+          require('./assets/images/takePicture.png'),
+          require('./assets/images/introBackground.png')
         ],
         fonts: [
           {

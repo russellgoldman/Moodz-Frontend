@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import { View, Text, TouchableOpacity, Dimensions } from 'react-native';
+import { View, Text, TouchableOpacity, Dimensions, ImageBackground } from 'react-native';
 import { NavigationActions } from 'react-navigation';
+import { introBackground } from '../../assets/images';
 
 const screenHeight = Dimensions.get('window').height;
 const screenWidth = Dimensions.get('window').width;
@@ -21,13 +22,15 @@ class WelcomeScreen extends Component {
         } = styles;
 
         return (
-            <View style={outerContainer}>
-                <Text style={titleText}>Hi!</Text>
-                <Text style={welcomeText}>Welcome to Moodz. We are here to help you get best cannabis experince possible. Set you interests and start exploring.</Text>
-                <TouchableOpacity style={getStartedButton} onPress={this._getStarted}>
-                    <Text style={getStartedText}>Get Started</Text>
-                </TouchableOpacity>
-            </View>
+            <ImageBackground source={introBackground} style={{width: '100%', height: '100%'}}>
+                <View style={outerContainer}>
+                    <Text style={titleText}>Hi!</Text>
+                    <Text style={welcomeText}>Welcome to Moodz. We are here to help you get best cannabis experince possible. Set you interests and start exploring.</Text>
+                    <TouchableOpacity style={getStartedButton} onPress={this._getStarted}>
+                        <Text style={getStartedText}>Continue</Text>
+                    </TouchableOpacity>
+                </View>
+            </ImageBackground>
         );
     }
 }
@@ -40,7 +43,8 @@ const styles = {
     titleText: {
         marginTop: screenHeight * (253 / screenPixelHeight),
         fontFamily: 'helvetica-neue-bold',
-        fontSize: 36,
+        fontSize: 64,
+        color: '#fff'
     },
     welcomeText: {
         marginTop: screenHeight * (38 / 769),
@@ -49,21 +53,22 @@ const styles = {
         marginLeft: screenWidth * (65 / screenPixelWeight),
         marginRight: screenWidth * (65 / screenPixelWeight),
         textAlign: 'center',
-        lineHeight: 30
+        lineHeight: 30,
+        color: '#fff'
     },
     getStartedButton: {
         justifyContent: 'center',
         marginTop: screenHeight * (207 / screenPixelHeight),
         marginLeft: screenWidth * (34 / screenPixelWeight),
         marginRight: screenWidth * (34 / screenPixelWeight),
-        borderRadius: 10,
-        backgroundColor: '#000',
-        height: screenHeight * (53 / screenPixelHeight),
-        width: screenWidth * (307 / screenPixelWeight)
+        borderRadius: 8,
+        backgroundColor: '#059033',
+        height: screenHeight * (50 / screenPixelHeight),
+        width: screenWidth * (288 / screenPixelWeight)
     },
     getStartedText: {
         fontFamily: 'helvetica-neue',
-        fontSize: 20,
+        fontSize: 17,
         color: '#fff',
         textAlign: 'center'
     }
