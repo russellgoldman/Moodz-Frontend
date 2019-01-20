@@ -14,6 +14,8 @@ import historySelected from './historySelected.png';
 import historyUnselected from './historyUnselected.png';
 import cannabisSelected from './cannabisSelected.png';
 import cannabisUnselected from './cannabisUnselected.png';
+import takeStrainPicture from './takeStrainPicture.png';
+import uploadStrainPicture from './uploadStrainPicture.png';
 
 export {
     closeButton,
@@ -31,5 +33,7 @@ export {
     historySelected,
     historyUnselected,
     cannabisSelected,
-    cannabisUnselected
+    cannabisUnselected,
+    takeStrainPicture,
+    uploadStrainPicture
 };

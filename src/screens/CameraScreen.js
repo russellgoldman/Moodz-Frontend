@@ -32,8 +32,7 @@ class CameraScreen extends Component {
 
     _takePicture = async () => {
         if (this.camera) {
-            let photo = await this.camera.takePictureAsync({ quality: 0.8, base64: true, fixOrientation: true, width: this.maxSize });
-            // MAKE CALL TO API WITH PHOTO
+            let photo = await this.camera.takePictureAsync({ quality: 0.5, base64: true, fixOrientation: true, width: this.maxSize });
             fetch('https://ernarkazakh.lib.id/moodz@dev/confirm/', {
                 method: 'POST',
                 headers: {
@@ -43,7 +42,22 @@ class CameraScreen extends Component {
                 body: JSON.stringify({
                     image: photo.base64
                 })
-            }).then((res) => console.log(res));
+            }).then((res) => {
+                try {
+                    var innerRes = JSON.parse(res._bodyText);
+                    console.log(innerRes.validated);
+                    console.log(res);
+
+                    if (innerRes.validated == true) {
+                        Alert.alert('Strain is valid');
+                    } else {
+                        Alert.alert('No strain detected');
+                    }
+                } catch(e) {
+                    Alert.alert('No strain detected');
+                }
+               
+            });
 
             Alert.alert('Photo taken!');
 

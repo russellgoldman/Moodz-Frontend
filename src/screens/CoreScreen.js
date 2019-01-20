@@ -57,8 +57,8 @@ class CoreScreen extends Component {
     _renderCameraTab = () => {
         return (
             <View style={{ marginTop: screenHeight * (100 / screenPixelHeight) }}>
-            <Text>History tab</Text>
-        </View>
+                <AddStrainContainer navigation={this.props.navigation} />
+            </View>
         );
     }
 

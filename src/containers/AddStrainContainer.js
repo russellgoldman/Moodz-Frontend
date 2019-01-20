@@ -49,14 +49,13 @@ class AddStrainContainer extends Component {
 const styles = {
     outerContainer: {
         height: screenHeight * (215 / screenPixelHeight),
-        width: screenWidth
+        width: screenWidth * (300 / screenPixelWidth),
+        borderRadius: 8,
+        backgroundColor: 'rgba(248, 248, 248, 0.82)'
     },
     titleContainer: {
         justifyContent: 'center',
         alignItems: 'center',
-        borderTopWidth: 2,
-        borderColor: '#d6d7da',
-        width: screenWidth,
         paddingTop: screenHeight * (15 / screenPixelHeight)
     },
     titleStyle: {

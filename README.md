@@ -1,7 +1,7 @@
 # Moodz
-Mobile app that promotes safe and legal consumption of cannabis products.
+Promoting safe and legal consumption of cannabis products
 
 ## Tools
-- Standard Library (Backend)
-- React Native (Frontend)
-- Figma (Design Mockups)
+- Standard Library (Backend) implemented by Noah Houpt and Yernar Akimzhanov
+- React Native (Frontend) implemented by Russell Goldman
+- Figma (Design Mockups) implemented by Max Bardus
