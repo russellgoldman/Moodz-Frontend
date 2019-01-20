@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import { View, Text, TouchableOpacity, Dimensions } from 'react-native';
 import { NavigationActions } from 'react-navigation';
-import { Navbar } from '../components';
-import { Camera, Permissions } from 'expo';
 
 const screenHeight = Dimensions.get('window').height;
 const screenWidth = Dimensions.get('window').width;
@@ -13,7 +11,7 @@ class AddStrainContainer extends Component {
     constructor() {
         /*
             props
-            - navigatation (passed from AddStrainScreen)
+            - navigation (passed from AddStrainScreen)
         */
         super();
     }

@@ -31,7 +31,10 @@ export default class App extends Component {
           require('./assets/images/personalUnselected.png'),
           require('./assets/images/suggestedSelected.png'),
           require('./assets/images/suggestedUnselected.png'),
-          require('./assets/images/camera.png'),
+          require('./assets/images/cameraSelected.png'),
+          require('./assets/images/cameraUnselected.png'),
+          require('./assets/images/cannabisSelected.png'),
+          require('./assets/images/cannabisUnselected.png'),
         ],
         fonts: [
           {

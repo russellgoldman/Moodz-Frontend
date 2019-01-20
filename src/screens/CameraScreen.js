@@ -34,7 +34,16 @@ class CameraScreen extends Component {
         if (this.camera) {
             let photo = await this.camera.takePictureAsync({ quality: 0.8, base64: true, fixOrientation: true, width: this.maxSize });
             // MAKE CALL TO API WITH PHOTO
-            console.log(photo);
+            fetch('https://ernarkazakh.lib.id/moodz@dev/confirm/', {
+                method: 'POST',
+                headers: {
+                    Accept: 'application/json',
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    image: photo.base64
+                })
+            }).then((res) => console.log(res));
 
             Alert.alert('Photo taken!');
 

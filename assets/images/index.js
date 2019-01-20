@@ -8,9 +8,11 @@ import personalSelected from './personalSelected.png';
 import personalUnselected from './personalUnselected.png';
 import suggestedSelected from './suggestedSelected.png';
 import suggestedUnselected from './suggestedUnselected.png';
-import camera from './camera.png';
+import cameraSelected from './cameraSelected.png';
+import cameraUnselected from './cameraUnselected.png';
 import historySelected from './historySelected.png';
 import historyUnselected from './historyUnselected.png';
+import cannabisSelected from './cannabisSelected.png';
 import cannabisUnselected from './cannabisUnselected.png';
 
 export {
@@ -24,8 +26,10 @@ export {
     personalUnselected,
     suggestedSelected,
     suggestedUnselected,
-    camera,
+    cameraSelected,
+    cameraUnselected,
     historySelected,
     historyUnselected,
+    cannabisSelected,
     cannabisUnselected
 };

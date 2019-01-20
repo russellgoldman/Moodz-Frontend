@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { View, Text, Dimensions, Image, TouchableOpacity } from 'react-native';
 import { 
-    camera, cannabisUnselected, historySelected, historyUnselected, personalSelected, 
-    personalUnselected, suggestedSelected, suggestedUnselected
+    cameraSelected, cameraUnselected, cannabisSelected, cannabisUnselected, historySelected, 
+    historyUnselected, personalSelected, personalUnselected, suggestedSelected, suggestedUnselected
  } from '../../assets/images';
 
 const screenHeight = Dimensions.get('window').height;
@@ -20,6 +20,7 @@ class CoreScreenTabManager extends Component {
         super();
         historyImg = historySelected;
         personalImg = personalUnselected;
+        cameraImg = cameraUnselected;
         cannabisImg = cannabisUnselected;
         suggestedImg = suggestedUnselected;
     }
@@ -41,19 +42,36 @@ class CoreScreenTabManager extends Component {
             case 'history':
                 historyImg = historySelected;
                 personalImg = personalUnselected;
+                cameraImg = cameraUnselected;
                 cannabisImg = cannabisUnselected;
                 suggestedImg = suggestedUnselected;
                 break;
             case 'personal':
                 historyImg = historyUnselected;
                 personalImg = personalSelected;
+                cameraImg = cameraUnselected;
                 cannabisImg = cannabisUnselected;
+                suggestedImg = suggestedUnselected;
+                break;
+            case 'camera':
+                historyImg = historyUnselected;
+                personalImg = personalUnselected;
+                cameraImg = cameraSelected;
+                cannabisImg = cannabisUnselected;
+                suggestedImg = suggestedUnselected;
+                break;
+            case 'cannabis':
+                historyImg = historyUnselected;
+                personalImg = personalUnselected;
+                cameraImg = cameraUnselected;
+                cannabisImg = cannabisSelected;
                 suggestedImg = suggestedUnselected;
                 break;
             case 'suggested':
                 historyImg = historyUnselected;
                 personalImg = personalUnselected;
-                cannabisImg = cannabisSelected;
+                cameraImg = cameraUnselected;
+                cannabisImg = cannabisUnselected;
                 suggestedImg = suggestedSelected;
                 break;
         }
@@ -62,19 +80,34 @@ class CoreScreenTabManager extends Component {
 
         return (
             <View style={outerContainer}>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => {
+                    this.props.selectedTabCallback('history');
+                    this.setState({ selectedTab: 'history' });
+                }}>
                     <Image source={historyImg} resizeMode='contain' style={imageStyle} />
                 </TouchableOpacity>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => {
+                    this.props.selectedTabCallback('personal');
+                    this.setState({ selectedTab: 'personal' });
+                }}>
                     <Image source={personalImg} resizeMode='contain' style={imageStyle} />
                 </TouchableOpacity>
-                <TouchableOpacity>
-                    <Image source={camera} resizeMode='contain' style={imageStyle} />
+                <TouchableOpacity onPress={() => {
+                    this.props.selectedTabCallback('camera');
+                    this.setState({ selectedTab: 'camera' });
+                }}>
+                    <Image source={cameraImg} resizeMode='contain' style={imageStyle} />
                 </TouchableOpacity>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => {
+                    this.props.selectedTabCallback('cannabis');
+                    this.setState({ selectedTab: 'cannabis' });
+                }}>
                     <Image source={cannabisImg} resizeMode='contain' style={imageStyle} />
                 </TouchableOpacity>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => {
+                    this.props.selectedTabCallback('suggested');
+                    this.setState({ selectedTab: 'suggested' });
+                }}>
                     <Image source={suggestedImg} resizeMode='contain' style={imageStyle} />
                 </TouchableOpacity>
             </View>
