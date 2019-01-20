@@ -74,36 +74,42 @@ class CreateProfileScreen extends Component {
 
         return (
             <ImageBackground source={introBackground} style={{width: '100%', height: '100%'}}>
-                <TouchableOpacity onPress={this._onExitPress}>
-                    <Image source={closeButtonWhite} style={closeButtonStyle} resizeMode='contain' />
-                </TouchableOpacity>
-                <View style={topRow}>
-                    <Text style={titleText}>Your info</Text>
+                <View style={{ flex: 1 }}>
+                    <TouchableOpacity onPress={this._onExitPress}>
+                        <Image source={closeButtonWhite} style={closeButtonStyle} resizeMode='contain' />
+                    </TouchableOpacity>
                 </View>
-                <View style={{ 
-                    marginTop: screenHeight * (100 / screenPixelHeight),
-                    marginBottom: screenHeight * ((46 - 25) / screenPixelHeight)
+                <View style={{
+                    marginBottom: screenHeight * (54 / screenPixelHeight)
                 }}>
-                    {this._renderGenderButtons()}
-                </View>
-                <View style={textInputContainer}>
-                    <TextInput style={textInputStyle} onChangeText={(name) => this.setState({ name })} 
-                        value={this.state.name} placeholder='Name' placeholderTextColor='#fff'
-                        selectionColor='#fff' />
-                </View>
-                <View style={textInputContainer}>
-                    <TextInput style={textInputStyle} onChangeText={(age) => this.setState({ age })} 
-                        value={this.state.age} placeholder='Age' placeholderTextColor='#fff'
-                        selectionColor='#fff' />
-                </View>
-                <View style={textInputContainer}>
-                    <TextInput style={textInputStyle} onChangeText={(weight) => this.setState({ weight })} 
-                        value={this.state.weight} placeholder='Weight' placeholderTextColor='#fff'
-                        selectionColor='#fff' />
-                </View>
-                <TouchableOpacity style={getStartedButton} onPress={this._onGetStarted}>
-                    <Text style={getStartedText}>Get Started</Text>
-                </TouchableOpacity>
+                    <View style={topRow}>
+                        <Text style={titleText}>Your info</Text>
+                    </View>
+                    <View style={{ 
+                        marginTop: screenHeight * (100 / screenPixelHeight),
+                        marginBottom: screenHeight * ((46 - 25) / screenPixelHeight)
+                    }}>
+                        {this._renderGenderButtons()}
+                    </View>
+                    <View style={textInputContainer}>
+                        <TextInput style={textInputStyle} onChangeText={(name) => this.setState({ name })} 
+                            value={this.state.name} placeholder='Name' placeholderTextColor='#fff'
+                            selectionColor='#fff' />
+                    </View>
+                    <View style={textInputContainer}>
+                        <TextInput style={textInputStyle} onChangeText={(age) => this.setState({ age })} 
+                            value={this.state.age} placeholder='Age' placeholderTextColor='#fff'
+                            selectionColor='#fff' />
+                    </View>
+                    <View style={textInputContainer}>
+                        <TextInput style={textInputStyle} onChangeText={(weight) => this.setState({ weight })} 
+                            value={this.state.weight} placeholder='Weight' placeholderTextColor='#fff'
+                            selectionColor='#fff' />
+                    </View>
+                    <TouchableOpacity style={getStartedButton} onPress={this._onGetStarted}>
+                        <Text style={getStartedText}>Get Started</Text>
+                    </TouchableOpacity>
+                    </View>
             </ImageBackground>
         );
     }
@@ -114,7 +120,6 @@ const styles = {
         flexDirection: 'row',
         height: screenHeight * (20 / screenPixelHeight),
         width: screenWidth,
-        marginTop: screenHeight * (30 / screenPixelHeight),
     },
     closeButtonStyle: {
         height: screenHeight * (25 / screenPixelHeight),
