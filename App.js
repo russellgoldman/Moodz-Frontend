@@ -22,7 +22,16 @@ export default class App extends Component {
           require('./assets/images/closeButton.png'),
           require('./assets/images/closeButtonWhite.png'),
           require('./assets/images/takePicture.png'),
-          require('./assets/images/introBackground.png')
+          require('./assets/images/introBackground.png'),
+          require('./assets/images/historySelected.png'),
+          require('./assets/images/historyUnselected.png'),
+          require('./assets/images/coreBackground.png'),
+          require('./assets/images/johnDoe.png'),
+          require('./assets/images/personalSelected.png'),
+          require('./assets/images/personalUnselected.png'),
+          require('./assets/images/suggestedSelected.png'),
+          require('./assets/images/suggestedUnselected.png'),
+          require('./assets/images/camera.png'),
         ],
         fonts: [
           {

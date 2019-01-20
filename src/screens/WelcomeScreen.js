@@ -42,13 +42,13 @@ const styles = {
     },
     titleText: {
         marginTop: screenHeight * (253 / screenPixelHeight),
-        fontFamily: 'rubrik',
+        fontFamily: 'rubik',
         fontSize: 64,
         color: '#fff'
     },
     welcomeText: {
         marginTop: screenHeight * (38 / 769),
-        fontFamily: 'helvetica-neue',
+        fontFamily: 'rubik',
         fontSize: 14,
         marginLeft: screenWidth * (65 / screenPixelWidth),
         marginRight: screenWidth * (65 / screenPixelWidth),
@@ -67,7 +67,7 @@ const styles = {
         width: screenWidth * (288 / screenPixelWidth)
     },
     getStartedText: {
-        fontFamily: 'helvetica-neue',
+        fontFamily: 'rubik',
         fontSize: 17,
         color: '#fff',
         textAlign: 'center'

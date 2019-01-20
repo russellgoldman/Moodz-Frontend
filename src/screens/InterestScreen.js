@@ -64,7 +64,7 @@ const styles = {
     },
     titleText: {
         marginTop: screenHeight * ((230 - 100) / screenPixelHeight),
-        fontFamily: 'helvetica-neue',
+        fontFamily: 'rubik',
         fontSize: 20,
         marginBottom: screenHeight * (30 / screenPixelHeight),
         color: '#fff'
@@ -80,14 +80,14 @@ const styles = {
         width: screenWidth * (260 / screenPixelWeight),
     },
     buttonTitleText: {
-        fontFamily: 'helvetica-neue',
+        fontFamily: 'rubik',
         fontSize: 17,
         color: '#2BEC6B',
         textAlign: 'center'
     },
     buttonDescriptionText: {
         marginTop: screenHeight * (5 / screenPixelHeight),
-        fontFamily: 'helvetica-neue',
+        fontFamily: 'rubik',
         fontSize: 12,
         color: '#fff',
         textAlign: 'center',

@@ -7,6 +7,7 @@ import {
     WelcomeScreen,
     CreateProfileScreen,
     InterestScreen,
+    CoreScreen,
     ProfileScreen,
     AddStrainScreen,
     CameraScreen
@@ -32,6 +33,12 @@ const RootStack = createStackNavigator(
             header: null
         }
     },
+    CoreScreen: {
+        screen: CoreScreen,
+        navigationOptions: {
+            header: null
+        }
+    },
     ProfileScreen: {
         screen: ProfileScreen,
         navigationOptions: {
@@ -52,7 +59,7 @@ const RootStack = createStackNavigator(
     }
   },
 {
-  initialRouteName: 'CreateProfileScreen',
+  initialRouteName: 'CoreScreen',
 });
 
 const Main = createAppContainer(RootStack);

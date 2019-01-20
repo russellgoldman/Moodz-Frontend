@@ -60,6 +60,13 @@ class CreateProfileScreen extends Component {
         }
     }
 
+    _onGetStarted = () => {
+        var navigate = NavigationActions.navigate({
+            routeName: 'InterestScreen',
+          });
+        this.props.navigation.navigate(navigate);
+    }
+
     render() {
         const { 
             topRow, closeButtonStyle, titleText, textInputContainer, textInputStyle, getStartedButton, getStartedText
@@ -81,18 +88,21 @@ class CreateProfileScreen extends Component {
                 </View>
                 <View style={textInputContainer}>
                     <TextInput style={textInputStyle} onChangeText={(name) => this.setState({ name })} 
-                        value={this.state.name} placeholder='Name' placeholderTextColor='#fff' />
+                        value={this.state.name} placeholder='Name' placeholderTextColor='#fff'
+                        selectionColor='#fff' />
                 </View>
                 <View style={textInputContainer}>
                     <TextInput style={textInputStyle} onChangeText={(age) => this.setState({ age })} 
-                        value={this.state.age} placeholder='Age' placeholderTextColor='#fff' />
+                        value={this.state.age} placeholder='Age' placeholderTextColor='#fff'
+                        selectionColor='#fff' />
                 </View>
                 <View style={textInputContainer}>
                     <TextInput style={textInputStyle} onChangeText={(weight) => this.setState({ weight })} 
-                        value={this.state.weight} placeholder='Weight' placeholderTextColor='#fff' />
+                        value={this.state.weight} placeholder='Weight' placeholderTextColor='#fff'
+                        selectionColor='#fff' />
                 </View>
-                <TouchableOpacity style={getStartedButton} onPress={this._getStarted}>
-                    <Text style={getStartedText}>Continue</Text>
+                <TouchableOpacity style={getStartedButton} onPress={this._onGetStarted}>
+                    <Text style={getStartedText}>Get Started</Text>
                 </TouchableOpacity>
             </ImageBackground>
         );
@@ -114,7 +124,7 @@ const styles = {
     },
     titleText: {
         flex: 1,
-        fontFamily: 'helvetica-neue',
+        fontFamily: 'rubik',
         fontSize: 20,
         color: '#fff',
         textAlign: 'center'
@@ -128,7 +138,7 @@ const styles = {
         borderRadius: 8,
     },
     genderTextSelected: {
-        fontFamily: 'helvetica-neue',
+        fontFamily: 'rubik',
         fontSize: 17,
         color: '#fff'
     },
@@ -141,7 +151,7 @@ const styles = {
         borderRadius: 8
     },
     genderTextUnselected: {
-        fontFamily: 'helvetica-neue',
+        fontFamily: 'rubik',
         fontSize: 17,
         color: '#2BEC6B'
     },
@@ -159,8 +169,9 @@ const styles = {
         width: screenWidth * (288 / screenPixelWidth),
         borderRadius: 8,
         paddingLeft: screenWidth * (20 / screenPixelWidth),
-        fontFamily: 'helvetica-neue',
+        fontFamily: 'rubik',
         fontSize: 17,
+        color: '#fff'
     },
     getStartedButton: {
         justifyContent: 'center',
@@ -173,7 +184,7 @@ const styles = {
         width: screenWidth * (288 / screenPixelWidth)
     },
     getStartedText: {
-        fontFamily: 'helvetica-neue',
+        fontFamily: 'rubik',
         fontSize: 17,
         color: '#fff',
         textAlign: 'center'

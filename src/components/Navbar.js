@@ -43,7 +43,7 @@ const styles = {
         height: screenHeight * (navbarTextHeight / screenPixelHeight),
     },
     titleStyle: {
-        fontFamily: 'helvetica-neue-bold',
+        fontFamily: 'rubik',
         fontSize: 18,
         textAlign: 'center'
     }

@@ -62,7 +62,7 @@ const styles = {
         paddingTop: screenHeight * (15 / screenPixelHeight)
     },
     titleStyle: {
-        fontFamily: 'helvetica-neue-bold',
+        fontFamily: 'rubik',
         fontSize: 21,
         textAlign: 'center'
     },
