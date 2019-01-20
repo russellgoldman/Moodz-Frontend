@@ -6,7 +6,7 @@ import { introBackground } from '../../assets/images';
 const screenHeight = Dimensions.get('window').height;
 const screenWidth = Dimensions.get('window').width;
 const screenPixelHeight = 769;
-const screenPixelWeight = 375;
+const screenPixelWidth = 375;
 
 class WelcomeScreen extends Component {
     _getStarted = () => {
@@ -42,7 +42,7 @@ const styles = {
     },
     titleText: {
         marginTop: screenHeight * (253 / screenPixelHeight),
-        fontFamily: 'helvetica-neue-bold',
+        fontFamily: 'rubrik',
         fontSize: 64,
         color: '#fff'
     },
@@ -50,8 +50,8 @@ const styles = {
         marginTop: screenHeight * (38 / 769),
         fontFamily: 'helvetica-neue',
         fontSize: 14,
-        marginLeft: screenWidth * (65 / screenPixelWeight),
-        marginRight: screenWidth * (65 / screenPixelWeight),
+        marginLeft: screenWidth * (65 / screenPixelWidth),
+        marginRight: screenWidth * (65 / screenPixelWidth),
         textAlign: 'center',
         lineHeight: 30,
         color: '#fff'
@@ -59,12 +59,12 @@ const styles = {
     getStartedButton: {
         justifyContent: 'center',
         marginTop: screenHeight * (207 / screenPixelHeight),
-        marginLeft: screenWidth * (34 / screenPixelWeight),
-        marginRight: screenWidth * (34 / screenPixelWeight),
+        marginLeft: screenWidth * (34 / screenPixelWidth),
+        marginRight: screenWidth * (34 / screenPixelWidth),
         borderRadius: 8,
         backgroundColor: '#059033',
         height: screenHeight * (50 / screenPixelHeight),
-        width: screenWidth * (288 / screenPixelWeight)
+        width: screenWidth * (288 / screenPixelWidth)
     },
     getStartedText: {
         fontFamily: 'helvetica-neue',

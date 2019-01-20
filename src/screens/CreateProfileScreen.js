@@ -62,7 +62,7 @@ class CreateProfileScreen extends Component {
 
     render() {
         const { 
-            topRow, closeButtonStyle, titleText, textInputStyle
+            topRow, closeButtonStyle, titleText, textInputContainer, textInputStyle, getStartedButton, getStartedText
         } = styles;
 
         return (
@@ -73,15 +73,27 @@ class CreateProfileScreen extends Component {
                 <View style={topRow}>
                     <Text style={titleText}>Your info</Text>
                 </View>
-                <View style={{ marginTop: screenHeight * (100 / screenPixelHeight) }}>
+                <View style={{ 
+                    marginTop: screenHeight * (100 / screenPixelHeight),
+                    marginBottom: screenHeight * ((46 - 25) / screenPixelHeight)
+                }}>
                     {this._renderGenderButtons()}
                 </View>
-                <TextInput style={textInputStyle} onChangeText={(name) => this.setState({ name })} 
-                    value={this.state.name} />
-                <TextInput style={textInputStyle} onChangeText={(age) => this.setState({ age })} 
-                    value={this.state.age} />
-                <TextInput style={textInputStyle} onChangeText={(weight) => this.setState({ weight })} 
-                    value={this.state.weight} />
+                <View style={textInputContainer}>
+                    <TextInput style={textInputStyle} onChangeText={(name) => this.setState({ name })} 
+                        value={this.state.name} placeholder='Name' placeholderTextColor='#fff' />
+                </View>
+                <View style={textInputContainer}>
+                    <TextInput style={textInputStyle} onChangeText={(age) => this.setState({ age })} 
+                        value={this.state.age} placeholder='Age' placeholderTextColor='#fff' />
+                </View>
+                <View style={textInputContainer}>
+                    <TextInput style={textInputStyle} onChangeText={(weight) => this.setState({ weight })} 
+                        value={this.state.weight} placeholder='Weight' placeholderTextColor='#fff' />
+                </View>
+                <TouchableOpacity style={getStartedButton} onPress={this._getStarted}>
+                    <Text style={getStartedText}>Continue</Text>
+                </TouchableOpacity>
             </ImageBackground>
         );
     }
@@ -133,12 +145,38 @@ const styles = {
         fontSize: 17,
         color: '#2BEC6B'
     },
-    textInputStyle: {
+    textInputContainer: {
         backgroundColor: 'rgba(255, 255, 255, 0.1)',
+        marginTop: screenHeight * (25 / screenPixelHeight),
         height: screenHeight * (55 / screenPixelHeight),
         width: screenWidth * (288 / screenPixelWidth),
         marginLeft: screenWidth * (44 / screenPixelWidth),
-        marginRight: screenWidth * (43 / screenPixelWidth)
+        marginRight: screenWidth * (43 / screenPixelWidth),
+        borderRadius: 8,
+    },
+    textInputStyle: {
+        height: screenHeight * (55 / screenPixelHeight),
+        width: screenWidth * (288 / screenPixelWidth),
+        borderRadius: 8,
+        paddingLeft: screenWidth * (20 / screenPixelWidth),
+        fontFamily: 'helvetica-neue',
+        fontSize: 17,
+    },
+    getStartedButton: {
+        justifyContent: 'center',
+        marginTop: screenHeight * (178 / screenPixelHeight),
+        marginLeft: screenWidth * (34 / screenPixelWidth),
+        marginRight: screenWidth * (34 / screenPixelWidth),
+        borderRadius: 8,
+        backgroundColor: '#059033',
+        height: screenHeight * (50 / screenPixelHeight),
+        width: screenWidth * (288 / screenPixelWidth)
+    },
+    getStartedText: {
+        fontFamily: 'helvetica-neue',
+        fontSize: 17,
+        color: '#fff',
+        textAlign: 'center'
     }
 }
 

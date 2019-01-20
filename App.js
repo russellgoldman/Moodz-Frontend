@@ -30,7 +30,8 @@ export default class App extends Component {
             'helvetica-neue-light': require('./assets/fonts/HelveticaNeue-Light.ttf'),
             'helvetica-neue-medium': require('./assets/fonts/HelveticaNeue-Medium.ttf'),
             'helvetica-neue-thin': require('./assets/fonts/HelveticaNeue-Thin.ttf'),
-            'helvetica-neue': require('./assets/fonts/HelveticaNeue.ttf')
+            'helvetica-neue': require('./assets/fonts/HelveticaNeue.ttf'),
+            'rubik': require('./assets/fonts/Rubik-Regular.ttf')
           }
         ]
       });

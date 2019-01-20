@@ -37,7 +37,10 @@ class CameraScreen extends Component {
             console.log(photo);
 
             Alert.alert('Photo taken!');
-            this.props.navigation.goBack();
+
+            setTimeout(() => {
+                this.props.navigation.goBack();
+            }, 1000);
         }
     };
 
