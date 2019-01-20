@@ -33,13 +33,13 @@ class InterestScreen extends Component {
                             </Text>
                         </TouchableOpacity>
                         <TouchableOpacity style={buttonStyle}>
-                            <Text style={buttonTitleText}>{`Learn More`}</Text>
+                            <Text style={buttonTitleText}>{`Discover`}</Text>
                             <Text style={buttonDescriptionText}>
                                 {`Learn more about what you try`}
                             </Text>
                         </TouchableOpacity>
                         <TouchableOpacity style={buttonStyle}>
-                            <Text style={buttonTitleText}>{`Receive Recommendations`}</Text>
+                            <Text style={buttonTitleText}>{`Recommendations`}</Text>
                             <Text style={buttonDescriptionText}>
                                 {`You never knew what you might like`}
                             </Text>

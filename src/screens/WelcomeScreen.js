@@ -11,7 +11,7 @@ const screenPixelWeight = 375;
 class WelcomeScreen extends Component {
     _getStarted = () => {
         var navigate = NavigationActions.navigate({
-            routeName: 'InterestScreen',
+            routeName: 'CreateProfileScreen',
           });
         this.props.navigation.navigate(navigate);
     };
