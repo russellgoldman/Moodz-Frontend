@@ -25,7 +25,7 @@ class WelcomeScreen extends Component {
             <ImageBackground source={introBackground} style={{width: '100%', height: '100%'}}>
                 <View style={outerContainer}>
                     <Text style={titleText}>Hi!</Text>
-                    <Text style={welcomeText}>Welcome to Moodz. We are here to help you get best cannabis experince possible. Set you interests and start exploring.</Text>
+                    <Text style={welcomeText}>Welcome to Moodz. We are here to help you get the best cannabis experince possible. Set your interests and start exploring.</Text>
                     <TouchableOpacity style={getStartedButton} onPress={this._getStarted}>
                         <Text style={getStartedText}>Continue</Text>
                     </TouchableOpacity>
