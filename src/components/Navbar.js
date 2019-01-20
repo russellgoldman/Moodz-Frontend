@@ -5,17 +5,14 @@ import { getStatusBarHeight } from 'react-native-status-bar-height';
 const screenHeight = Dimensions.get('window').height;
 const screenWidth = Dimensions.get('window').width;
 const screenPixelHeight = 769;
-const screenPixelWeight = 375;
+const screenPixelWidth = 375;
 const navbarTextHeight = 44;
 
 class Navbar extends Component {
     componentWillMount() {
         if (this.props.setTotalHeight) {
             this.props.setTotalHeight(getStatusBarHeight() + navbarTextHeight);
-            //console.log(typeof(this.props.setTotalHeight));
         }
-        
-        //
     }
 
     render() {

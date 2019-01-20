@@ -7,7 +7,8 @@ import {
     WelcomeScreen,
     InterestScreen,
     ProfileScreen,
-    AddStrainScreen
+    AddStrainScreen,
+    CameraScreen
 } from './screens';
 
 const RootStack = createStackNavigator(
@@ -32,6 +33,12 @@ const RootStack = createStackNavigator(
     },
     AddStrainScreen: {
         screen: AddStrainScreen,
+        navigationOptions: {
+            header: null
+        }
+    },
+    CameraScreen: {
+        screen: CameraScreen,
         navigationOptions: {
             header: null
         }

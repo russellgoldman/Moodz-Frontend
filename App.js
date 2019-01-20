@@ -17,6 +17,11 @@ export default class App extends Component {
   async _loadAssetsAsync() {
     try {
       await cacheAssetsAsync({
+        images: [
+          require('./assets/images/closeButton.png'),
+          require('./assets/images/closeButtonWhite.png'),
+          require('./assets/images/takePicture.png')
+        ],
         fonts: [
           {
             'helvetica-neue-bold': require('./assets/fonts/HelveticaNeue-Bold.ttf'),

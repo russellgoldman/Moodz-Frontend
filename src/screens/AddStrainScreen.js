@@ -7,7 +7,7 @@ import { AddStrainContainer } from '../containers';
 const screenHeight = Dimensions.get('window').height;
 const screenWidth = Dimensions.get('window').width;
 const screenPixelHeight = 769;
-const screenPixelWeight = 375;
+const screenPixelWidth = 375;
 
 class AddStrainScreen extends Component {
     constructor() {
@@ -25,7 +25,6 @@ class AddStrainScreen extends Component {
 
 
     render() {
-        console.log(this.state.navbarHeight);
         const {
             distance
         } = styles;
@@ -36,7 +35,7 @@ class AddStrainScreen extends Component {
                 <View style={{ 
                     marginTop: screenHeight * ((597 - this.state.navbarHeight) / screenPixelHeight) 
                 }}>
-                    <AddStrainContainer />
+                    <AddStrainContainer navigation={this.props.navigation} />
                 </View>
             </View>
         );
