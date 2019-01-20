@@ -16,6 +16,7 @@ import cannabisSelected from './cannabisSelected.png';
 import cannabisUnselected from './cannabisUnselected.png';
 import takeStrainPicture from './takeStrainPicture.png';
 import uploadStrainPicture from './uploadStrainPicture.png';
+import cannabisPlant from './cannabisPlant.png';
 
 export {
     closeButton,
@@ -35,5 +36,6 @@ export {
     cannabisSelected,
     cannabisUnselected,
     takeStrainPicture,
-    uploadStrainPicture
+    uploadStrainPicture,
+    cannabisPlant
 };

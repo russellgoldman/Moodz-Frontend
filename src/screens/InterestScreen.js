@@ -13,6 +13,13 @@ class InterestScreen extends Component {
         this.props.navigation.goBack();
     }
 
+    _goToCoreScreen = () => {
+        var navigate = NavigationActions.navigate({
+            routeName: 'CoreScreen',
+          });
+        this.props.navigation.navigate(navigate);
+    }
+
     render() {
         const { 
             outerContainer, closeButtonStyle, titleText, buttonStyle, buttonTitleText, buttonDescriptionText
@@ -26,19 +33,19 @@ class InterestScreen extends Component {
                     </TouchableOpacity>
                     <View style={outerContainer}>
                         <Text style={titleText}>{`What's your incentive?`}</Text>
-                        <TouchableOpacity style={buttonStyle}>
+                        <TouchableOpacity style={buttonStyle} onPress={this._goToCoreScreen}>
                             <Text style={buttonTitleText}>{`Track Consumption`}</Text>
                             <Text style={buttonDescriptionText}>
                                 {`Keep track on your intake and health`}
                             </Text>
                         </TouchableOpacity>
-                        <TouchableOpacity style={buttonStyle}>
+                        <TouchableOpacity style={buttonStyle} onPress={this._goToCoreScreen}>
                             <Text style={buttonTitleText}>{`Discover`}</Text>
                             <Text style={buttonDescriptionText}>
                                 {`Learn more about what you try`}
                             </Text>
                         </TouchableOpacity>
-                        <TouchableOpacity style={buttonStyle}>
+                        <TouchableOpacity style={buttonStyle} onPress={this._goToCoreScreen}>
                             <Text style={buttonTitleText}>{`Recommendations`}</Text>
                             <Text style={buttonDescriptionText}>
                                 {`You never knew what you might like`}

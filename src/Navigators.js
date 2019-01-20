@@ -59,7 +59,7 @@ const RootStack = createStackNavigator(
     }
   },
 {
-  initialRouteName: 'CoreScreen',
+  initialRouteName: 'WelcomeScreen',
 });
 
 const Main = createAppContainer(RootStack);

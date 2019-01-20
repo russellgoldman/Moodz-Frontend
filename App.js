@@ -37,6 +37,7 @@ export default class App extends Component {
           require('./assets/images/cannabisUnselected.png'),
           require('./assets/images/takeStrainPicture.png'),
           require('./assets/images/uploadStrainPicture.png'),
+          require('./assets/images/cannabisPlant.png'),
         ],
         fonts: [
           {

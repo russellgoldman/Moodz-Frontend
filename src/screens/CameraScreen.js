@@ -45,8 +45,6 @@ class CameraScreen extends Component {
             }).then((res) => {
                 try {
                     var innerRes = JSON.parse(res._bodyText);
-                    console.log(innerRes.validated);
-                    console.log(res);
 
                     if (innerRes.validated == true) {
                         Alert.alert('Strain is valid');

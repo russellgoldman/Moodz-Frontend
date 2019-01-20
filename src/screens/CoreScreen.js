@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { View, Text, TouchableOpacity, Dimensions, Image, ImageBackground, TextInput } from 'react-native';
 import { NavigationActions } from 'react-navigation';
 import { coreBackground, johnDoe } from '../../assets/images';
-import { AddStrainContainer, CoreScreenTabManager } from '../containers';
+import { AddStrainContainer, CoreScreenTabManager, HistoryContainer } from '../containers';
 
 const screenHeight = Dimensions.get('window').height;
 const screenWidth = Dimensions.get('window').width;
@@ -16,7 +16,8 @@ class CoreScreen extends Component {
     }
 
     state = {
-        selectedTab: 'history'
+        selectedTab: 'history',
+        recommendedStrain: '',
     }
 
     _selectedTabCallback = (selectedTab) => {
@@ -40,15 +41,15 @@ class CoreScreen extends Component {
 
     _renderHistoryTab = () => {
         return (
-            <View style={{ marginTop: screenHeight * (100 / screenPixelHeight) }}>
-                <Text>History tab</Text>
+            <View style={{ marginTop: screenHeight * (50 / screenPixelHeight) }}>
+                <HistoryContainer />
             </View>
         );
     }
 
     _renderPersonalTab = () => {
         return (
-            <View>
+            <View style={{ marginTop: screenHeight * (50 / screenPixelHeight) }}>
                 <Text>Personal tab</Text>
             </View>
         );
@@ -64,16 +65,31 @@ class CoreScreen extends Component {
 
     _renderCannabisTab = () => {
         return (
-            <View>
+            <View style={{ marginTop: screenHeight * (50 / screenPixelHeight) }}>
                 <Text>Cannabis tab</Text>
             </View>
         );
     }
 
     _renderSuggestedTab = () => {
+        fetch('https://noahhoupt.lib.id/moodz/recommendation')
+            .then((res) => {
+                this.setState({ recommendedStrain: JSON.parse(res._bodyText) });
+            });
+
         return (
-            <View>
-                <Text>Suggested</Text>
+            <View style={{ marginTop: screenHeight * (50 / screenPixelHeight) }}>
+                <Text style={{ 
+                    fontFamily: 'rubik',
+                    fontSize: 24,
+                    textAlign: 'center',
+                    marginBottom: 20
+                 }}>Suggested Strain</Text>
+                <Text style={{ 
+                    fontFamily: 'rubik',
+                    fontSize: 18,
+                    textAlign: 'center'
+                 }}>{this.state.recommendedStrain}</Text>
             </View>
         );
     }
