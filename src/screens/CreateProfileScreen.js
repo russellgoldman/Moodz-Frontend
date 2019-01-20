@@ -1,16 +1,19 @@
 import React, { Component } from 'react'
-import { View, Text, TouchableOpacity, Dimensions, Image, ImageBackground } from 'react-native';
+import { View, Text, TouchableOpacity, Dimensions, Image, ImageBackground, TextInput } from 'react-native';
 import { NavigationActions } from 'react-navigation';
 import { closeButtonWhite, introBackground } from '../../assets/images';
 
 const screenHeight = Dimensions.get('window').height;
 const screenWidth = Dimensions.get('window').width;
 const screenPixelHeight = 769;
-const screenPixelWeight = 375;
+const screenPixelWidth = 375;
 
 class CreateProfileScreen extends Component {
     state = {
-        gender: 'Male'
+        gender: 'Male',
+        name: '',
+        age: '',
+        weight: ''
     }
 
     _onExitPress = () => {
@@ -30,7 +33,7 @@ class CreateProfileScreen extends Component {
                     }}>
                         <Text style={genderTextSelected}>MALE</Text>
                     </TouchableOpacity>
-                    <View style={{ width: screenWidth * (23 / screenPixelWeight) }} />
+                    <View style={{ width: screenWidth * (23 / screenPixelWidth) }} />
                     <TouchableOpacity style={genderButtonUnselected} onPress={() => {
                         this.setState({ gender: 'Female' });
                     }}>
@@ -46,7 +49,7 @@ class CreateProfileScreen extends Component {
                     }}>
                         <Text style={genderTextUnselected}>MALE</Text>
                     </TouchableOpacity>
-                    <View style={{ width: screenWidth * (23 / screenPixelWeight) }} />
+                    <View style={{ width: screenWidth * (23 / screenPixelWidth) }} />
                     <TouchableOpacity style={genderButtonSelected} onPress={() => {
                         this.setState({ gender: 'Female' });
                     }}>
@@ -59,7 +62,7 @@ class CreateProfileScreen extends Component {
 
     render() {
         const { 
-            topRow, closeButtonStyle, titleText
+            topRow, closeButtonStyle, titleText, textInputStyle
         } = styles;
 
         return (
@@ -73,7 +76,12 @@ class CreateProfileScreen extends Component {
                 <View style={{ marginTop: screenHeight * (100 / screenPixelHeight) }}>
                     {this._renderGenderButtons()}
                 </View>
-                
+                <TextInput style={textInputStyle} onChangeText={(name) => this.setState({ name })} 
+                    value={this.state.name} />
+                <TextInput style={textInputStyle} onChangeText={(age) => this.setState({ age })} 
+                    value={this.state.age} />
+                <TextInput style={textInputStyle} onChangeText={(weight) => this.setState({ weight })} 
+                    value={this.state.weight} />
             </ImageBackground>
         );
     }
@@ -88,9 +96,9 @@ const styles = {
     },
     closeButtonStyle: {
         height: screenHeight * (25 / screenPixelHeight),
-        width: screenWidth * (25 / screenPixelWeight),
+        width: screenWidth * (25 / screenPixelWidth),
         top: screenHeight * (55 / screenPixelHeight),
-        marginLeft: screenWidth * (20 / screenPixelWeight),
+        marginLeft: screenWidth * (20 / screenPixelWidth),
     },
     titleText: {
         flex: 1,
@@ -103,7 +111,7 @@ const styles = {
         justifyContent: 'center', 
         alignItems: 'center',
         height: screenHeight * (50 / screenPixelHeight),
-        width: screenWidth * (128 / screenPixelWeight),
+        width: screenWidth * (128 / screenPixelWidth),
         backgroundColor: '#2BEC6B',
         borderRadius: 8,
     },
@@ -116,7 +124,7 @@ const styles = {
         justifyContent: 'center', 
         alignItems: 'center',
         height: screenHeight * (50 / screenPixelHeight),
-        width: screenWidth * (128 / screenPixelWeight),
+        width: screenWidth * (128 / screenPixelWidth),
         backgroundColor: 'rgba(255, 255, 255, 0.1)',
         borderRadius: 8
     },
@@ -124,6 +132,13 @@ const styles = {
         fontFamily: 'helvetica-neue',
         fontSize: 17,
         color: '#2BEC6B'
+    },
+    textInputStyle: {
+        backgroundColor: 'rgba(255, 255, 255, 0.1)',
+        height: screenHeight * (55 / screenPixelHeight),
+        width: screenWidth * (288 / screenPixelWidth),
+        marginLeft: screenWidth * (44 / screenPixelWidth),
+        marginRight: screenWidth * (43 / screenPixelWidth)
     }
 }
 
