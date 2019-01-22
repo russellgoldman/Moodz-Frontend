@@ -4,6 +4,9 @@ Promoting safe and legal consumption of cannabis products
 ## Devpost
 https://devpost.com/software/moodz-jzn9xe
 
+## Backend Repository
+https://github.com/noahhoupt/Moodz_Backend
+
 ## Tools
 - Standard Library (Backend) implemented by Noah Houpt and Yernar Akimzhanov
 - React Native (Frontend) implemented by Russell Goldman
